@@ -158,16 +158,12 @@ package.json            Only defines `npm test`; no dependencies
 
 ## AI tool and model
 
-- **Tool:** Claude Code (Anthropic), run as a cloud session.
-- **Model:** a Claude model from Anthropic. The exact model identifier is not
-  written here because the tool's repository policy keeps model identifiers
-  out of committed files. Take it from the preserved session record.
-- The AI generated all product documents, code, tests and this README in that
-  session. The original session transcript is preserved separately and is not
-  reproduced or edited here.
+- **Tool:** Claude Code Web (Anthropic).
+- **Model:** Claude Opus 5.5.
+- The AI generated all product documents, application code, automated tests, and the initial README.
+- The original Claude Code session transcript was exported separately using the Claude Code CLI `/export` command.
 
 ## Manual code edits
 
-**None.** No human edited any code or documentation during the AI session.
-If you edit files by hand later, list each change here: the file, what changed,
-and why.
+- **Application code:** None. No manual changes were made to the application code.
+- **README.md:** Manually updated the AI tool and model details and documented the transcript export method for assignment submission.
