@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculate your training completion percentage, remaining courses and remaining learning time.">
+  <title>Learning Progress Calculator</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Learning Progress Calculator</h1>
+      <p class="lead">See how far along your training is and how much learning time remains.</p>
+    </header>
+
+    <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden></div>
+
+    <form id="progress-form" class="card" novalidate>
+      <div class="field">
+        <label for="assigned-courses">Assigned courses</label>
+        <p id="assigned-courses-hint" class="hint">Total courses assigned to you (whole number, 0 or more).</p>
+        <input id="assigned-courses" name="assignedCourses" type="text"
+               inputmode="numeric" autocomplete="off" spellcheck="false"
+               aria-describedby="assigned-courses-hint assigned-courses-error">
+        <p id="assigned-courses-error" class="field-error" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="completed-courses">Completed courses</label>
+        <p id="completed-courses-hint" class="hint">Courses you have finished (cannot exceed assigned courses).</p>
+        <input id="completed-courses" name="completedCourses" type="text"
+               inputmode="numeric" autocomplete="off" spellcheck="false"
+               aria-describedby="completed-courses-hint completed-courses-error">
+        <p id="completed-courses-error" class="field-error" hidden></p>
+      </div>
+
+      <div class="field">
+        <label for="average-duration">Average course duration (minutes)</label>
+        <p id="average-duration-hint" class="hint">Typical time to finish one course, greater than 0 (for example 45 or 7.5).</p>
+        <input id="average-duration" name="averageDurationMinutes" type="text"
+               inputmode="decimal" autocomplete="off" spellcheck="false"
+               aria-describedby="average-duration-hint average-duration-error">
+        <p id="average-duration-error" class="field-error" hidden></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="button button-primary">Calculate</button>
+        <button type="reset" id="reset-button" class="button button-secondary">Reset</button>
+      </div>
+    </form>
+
+    <section id="results" class="card results" aria-labelledby="results-heading" aria-live="polite" hidden>
+      <h2 id="results-heading">Your progress</h2>
+      <dl class="result-grid">
+        <div class="result-item">
+          <dt>Completion</dt>
+          <dd id="result-completion"></dd>
+        </div>
+        <div class="result-item">
+          <dt>Remaining courses</dt>
+          <dd id="result-remaining-courses"></dd>
+        </div>
+        <div class="result-item">
+          <dt>Estimated remaining time</dt>
+          <dd id="result-remaining-time"></dd>
+        </div>
+      </dl>
+      <div id="result-progress-track" class="progress-track" aria-hidden="true">
+        <div id="result-progress-bar" class="progress-bar"></div>
+      </div>
+      <p id="result-note" class="result-note" hidden></p>
+    </section>
+  </main>
+
+  <script src="src/calculator.js"></script>
+  <script src="src/format.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "learning-progress-calculator",
+  "version": "1.0.0",
+  "description": "Browser-only calculator that shows LMS training completion, remaining courses and remaining learning time.",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
